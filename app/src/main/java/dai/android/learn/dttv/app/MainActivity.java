@@ -125,10 +125,10 @@ public class MainActivity extends Activity implements
             // mPlayer.setDataSource("http://183.207.249.14/PLTV/3/224/3221225567/index.m3u8");
 
             // newTv 动作电影
-            mPlayer.setDataSource("http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8");
+            // mPlayer.setDataSource("http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8");
 
             // 新闻频道
-            // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8");
+            mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8");
 
             // iptv 经典剧场
             // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001186.sdp?vcdnid=001");
