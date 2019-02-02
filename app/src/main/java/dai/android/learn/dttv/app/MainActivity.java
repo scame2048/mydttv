@@ -16,8 +16,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 
-import app.dttv.dttvlib.MediaPlayer;
 import dai.android.learn.dttv.app.data.UrlInfo;
+import dai.android.learn.dttv.app.ijk.IIListener;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 // 一些相关播放地址网站
 //  https://www.colabug.com/4989352.html
@@ -26,17 +28,13 @@ import dai.android.learn.dttv.app.data.UrlInfo;
 
 
 public class MainActivity extends Activity implements
-        SurfaceHolder.Callback2,
-        MediaPlayer.OnPreparedListener,
-        MediaPlayer.OnCompletionListener,
-        MediaPlayer.OnBufferingUpdateListener,
-        MediaPlayer.OnErrorListener {
+        SurfaceHolder.Callback2, IIListener {
     private static final String TAG = "MainActivity";
 
     private long mLastPressBackTime = 0L;
 
     private SurfaceView mVideoDisplay;
-    private MediaPlayer mPlayer;
+    private IjkMediaPlayer mPlayer;
 
     @Override
     public void onBackPressed() {
@@ -87,7 +85,7 @@ public class MainActivity extends Activity implements
     }
 
     private void setupMediaPlayer() {
-        mPlayer = new MediaPlayer(this, true);
+        mPlayer = new IjkMediaPlayer();
 
         mVideoDisplay = findViewById(R.id.video_display);
         mVideoDisplay.getHolder().addCallback(this);
@@ -106,7 +104,7 @@ public class MainActivity extends Activity implements
                 return;
             }
 
-            if (mPlayer.isLooping()) {
+            if (mPlayer.isPlaying()) {
                 Log.d(TAG, "player is playing");
                 return;
             }
@@ -118,14 +116,14 @@ public class MainActivity extends Activity implements
             // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001022.sdp?vcdnid=001");
 
             // cctv 9
-            // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001020.sdp?vcdnid=001");
+            mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001020.sdp?vcdnid=001");
             // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226566/index.m3u8");
 
             // 经典电影
             // mPlayer.setDataSource("http://183.207.249.14/PLTV/3/224/3221225567/index.m3u8");
 
             // newTv 动作电影
-            mPlayer.setDataSource("http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8");
+            // mPlayer.setDataSource("http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8");
 
             // 新闻频道
             // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8");
@@ -145,8 +143,8 @@ public class MainActivity extends Activity implements
             // 苹果测试
             // mPlayer.setDataSource("http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8");
             mPlayer.setDisplay(mVideoDisplay.getHolder());
-            mPlayer.prepare();
-            mPlayer.start();
+            mPlayer.prepareAsync();
+            //mPlayer.start();
 
         } catch (Exception e) {
             Log.e(TAG, "prepare failed", e);
@@ -178,6 +176,9 @@ public class MainActivity extends Activity implements
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         Log.d(TAG, "surface created");
+        if (null != mPlayer) {
+            mPlayer.setDisplay(holder);
+        }
     }
 
     @Override
@@ -192,33 +193,31 @@ public class MainActivity extends Activity implements
     }
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // implement the callback of  MediaPlayer.xxListener
+    // implement the callback of  IJK
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     @Override
-    public void onPrepared(MediaPlayer mp) {
-        Log.d(TAG, "prepared");
+    public void onBufferingUpdate(IMediaPlayer iMediaPlayer, int i) {
+
+    }
+
+    @Override
+    public void onCompletion(IMediaPlayer iMediaPlayer) {
+
+    }
+
+    @Override
+    public void onSeekComplete(IMediaPlayer iMediaPlayer) {
+
+    }
+
+    @Override
+    public void onPrepared(IMediaPlayer iMediaPlayer) {
         if (null != mPlayer) {
             mPlayer.start();
         }
     }
 
-    @Override
-    public void onCompletion(MediaPlayer mp) {
-        Log.d(TAG, "completion");
-    }
-
-    @Override
-    public void onBufferingUpdate(MediaPlayer mp, int percent) {
-        Log.d(TAG, "[onBufferingUpdate(" + percent + ")]");
-    }
-
-    @Override
-    public boolean onError(MediaPlayer mp, int what, int extra) {
-        Log.e(TAG, "onError( what: " + what + ", extra: " + extra + " )");
-        stopMediaPlayer();
-        return false;
-    }
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // implement list
@@ -255,6 +254,7 @@ public class MainActivity extends Activity implements
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     private SimpleAdapter myAdapter = new SimpleAdapter();
     private ItemClickListener mItemClickListener = new ItemClickListener();
+
 
     private class SimpleAdapter extends BaseAdapter {
 

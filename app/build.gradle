@@ -28,8 +28,14 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation rootProject.ext.dependencies['dttvlib']
+
     implementation rootProject.ext.dependencies['gson']
+    implementation rootProject.ext.dependencies['ijk_java']
+    implementation rootProject.ext.dependencies['ijk_armv7a']
+    implementation rootProject.ext.dependencies['ijk_arm64']
+    implementation rootProject.ext.dependencies['ijk_exo']
 
     // implementation project(':Libdttv')
+    /// disable dttvlib
+    // implementation rootProject.ext.dependencies['dttvlib']
 }
