@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mydttv</string>
+
+    <string name="strDecodeHardWare">硬解</string>
+    <string name="strDecodeSoft">软解</string>
+
+</resources>
