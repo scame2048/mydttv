@@ -1,11 +1,35 @@
 [
   {
+    "name": "爱情喜剧",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225525/index.m3u8"
+  },
+  {
+    "name": "CNTV古装剧场",
+    "address": "http://183.207.249.7/PLTV/3/224/3221225527/index.m3u8"
+  },
+  {
+    "name": "动画王国HD",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225555/index.m3u8"
+  },
+  {
+    "name": "海外剧场",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225547/index.m3u8"
+  },
+  {
+    "name": "电影轮播",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226670/index.m3u8"
+  },
+  {
     "name": "CCTV-1",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001022.sdp?vcdnid=001"
   },
   {
     "name": "CCTV-1 HD",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001075.sdp?vcdnid=001"
+  },
+  {
+    "name": "CCTV1 综合HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226489/index.m3u8"
   },
   {
     "name": "CCTV-2",
@@ -16,44 +40,100 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001223.sdp?vcdnid=001"
   },
   {
+    "name": "CCTV2 财经HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226554/index.m3u8"
+  },
+  {
+    "name": "CCTV-3 综艺HD",
+    "address": "http://183.207.249.5/PLTV/3/224/3221225588/index.m3u8"
+  },
+  {
     "name": "CCTV-4",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001015.sdp?vcdnid=001"
+  },
+  {
+    "name": "CCTV4 中文国际",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226511/index.m3u8"
   },
   {
     "name": "CCTV-5+HD",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001074.sdp?vcdnid=001"
   },
   {
+    "name": "CCTV-5 体育HD",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225604/index.m3u8"
+  },
+  {
+    "name": "CCTV-6 电影HD",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225548/index.m3u8"
+  },
+  {
     "name": "CCTV-7",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001018.sdp?vcdnid=001"
+  },
+  {
+    "name": "CCTV-7 军事与农业HD",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225546/index.m3u8"
+  },
+  {
+    "name": "CCTV8 电视剧HD",
+    "address": "http://223.110.245.167/ott.js.chinamobile.com/PLTV/3/224/3221227204/index.m3u8"
   },
   {
     "name": "CCTV-9",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001020.sdp?vcdnid=001"
   },
   {
+    "name": "CCTV9 记录HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226566/index.m3u8"
+  },
+  {
     "name": "CCTV-10",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001021.sdp?vcdnid=001"
+  },
+  {
+    "name": "CCTV10 科教HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226488/index.m3u8"
   },
   {
     "name": "CCTV-11",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001027.sdp?vcdnid=001"
   },
   {
+    "name": "CCTV11 戏曲HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226493/index.m3u8"
+  },
+  {
     "name": "CCTV-12",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001028.sdp?vcdnid=001"
+  },
+  {
+    "name": "CCTV12 HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226623/index.m3u8"
   },
   {
     "name": "CCTV-13",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001029.sdp?vcdnid=001"
   },
   {
+    "name": "CCTV13 新闻HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8"
+  },
+  {
     "name": "CCTV-14",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001030.sdp?vcdnid=001"
   },
   {
+    "name": "CCTV14 少儿HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226497/index.m3u8"
+  },
+  {
     "name": "CCTV-15",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001031.sdp?vcdnid=001"
+  },
+  {
+    "name": "CCTV-15 音乐",
+    "address": "http://183.207.249.7/PLTV/3/224/3221225568/index.m3u8"
   },
   {
     "name": "CGTN",
@@ -132,8 +212,16 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001024.sdp?vcdnid=001"
   },
   {
+    "name": "安徽卫视HD",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225634/index.m3u8"
+  },
+  {
     "name": "北京卫视",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001025.sdp?vcdnid=001"
+  },
+  {
+    "name": "北京卫视HD",
+    "address": "http://183.207.249.7/PLTV/3/224/3221225574/index.m3u8"
   },
   {
     "name": "重庆卫视",
@@ -216,6 +304,10 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001053.sdp?vcdnid=001"
   },
   {
+    "name": "湖南卫视 HD",
+    "address": "http://223.110.243.173/PLTV/3/224/3221227220/index.m3u8"
+  },
+  {
     "name": "江苏卫视",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001055.sdp?vcdnid=001"
   },
@@ -224,8 +316,20 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001056.sdp?vcdnid=001"
   },
   {
+    "name": "农业致富 m3u8",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225537/index.m3u8"
+  },
+  {
+    "name": "兵团卫视HD m3u8",
+    "address": "http://v.btzx.com.cn:1935/live/weishi.stream/playlist.m3u8"
+  },
+  {
     "name": "金鹰纪实",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001057.sdp?vcdnid=001"
+  },
+  {
+    "name": "金鹰纪实HD",
+    "address": "http://112.50.243.7/PLTV/88888888/224/3221226613/index.m3u8"
   },
   {
     "name": "金鹰卡通",
@@ -252,8 +356,16 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001064.sdp?vcdnid=001"
   },
   {
+    "name": "四川卫视 m3u8",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225570/index.m3u8"
+  },
+  {
     "name": "山东卫视",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001065.sdp?vcdnid=001"
+  },
+  {
+    "name": "山东卫视 m3u8",
+    "address": "http://183.207.249.7/PLTV/3/224/3221225586/index.m3u8"
   },
   {
     "name": "四海钓鱼",
@@ -290,6 +402,10 @@
   {
     "name": "浙江卫视HD",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001076.sdp?vcdnid=001"
+  },
+  {
+    "name": "浙江卫视HD - 1",
+    "address": "http://223.110.243.173/PLTV/3/224/3221227215/index.m3u8"
   },
   {
     "name": "北京卫视HD",
@@ -352,6 +468,10 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001110.sdp?vcdnid=001"
   },
   {
+    "name": "河北卫视 m3u8",
+    "address": "http://183.207.249.7/PLTV/3/224/3221225602/index.m3u8"
+  },
+  {
     "name": "河南卫视",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001111.sdp?vcdnid=001"
   },
@@ -388,6 +508,10 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001121.sdp?vcdnid=001"
   },
   {
+    "name": "青海卫视 - 1",
+    "address": "http://183.207.249.7/PLTV/3/224/3221225580/index.m3u8"
+  },
+  {
     "name": "人物频道",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001122.sdp?vcdnid=001"
   },
@@ -408,8 +532,16 @@
     "address": "rtsp://119.39.49.116:554/ch00000090990000001128.sdp?vcdnid=001"
   },
   {
+    "name": "新疆卫视 m3u8",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225523/index.m3u8"
+  },
+  {
     "name": "西藏卫视",
     "address": "rtsp://119.39.49.116:554/ch00000090990000001129.sdp?vcdnid=001"
+  },
+  {
+    "name": "西藏卫视 m3u8",
+    "address": "http://183.207.249.15/PLTV/3/224/3221225579/index.m3u8"
   },
   {
     "name": "优优宝贝",

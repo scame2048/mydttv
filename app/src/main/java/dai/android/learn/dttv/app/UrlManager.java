@@ -47,6 +47,8 @@ public final class UrlManager {
     private UrlManager(Context context) {
         mContext = context;
         mUrls = new ArrayList<>();
+
+        parseJson();
     }
 
     public List<UrlInfo> getUrls() {

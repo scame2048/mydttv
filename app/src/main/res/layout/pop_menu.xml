@@ -34,7 +34,7 @@
     <ListView
         android:id="@+id/play_url_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:descendantFocusability="blocksDescendants"
         android:listSelector="@drawable/simple_button_background2" />

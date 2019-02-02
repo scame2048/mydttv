@@ -2,6 +2,7 @@ package dai.android.learn.dttv.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 
@@ -38,6 +40,8 @@ public class MainActivity extends Activity implements
     private SurfaceView mVideoDisplay;
     private MediaPlayer mPlayer;
 
+    private String mCurrentUrl;
+
     @Override
     public void onBackPressed() {
         if (System.currentTimeMillis() - mLastPressBackTime <= 700) {
@@ -50,6 +54,15 @@ public class MainActivity extends Activity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageButton settingButton = findViewById(R.id.button_setting);
+        settingButton.requestFocus();
+        settingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayPopWindow();
+            }
+        });
 
         setupMediaPlayer();
     }
@@ -128,7 +141,7 @@ public class MainActivity extends Activity implements
             // mPlayer.setDataSource("http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8");
 
             // 新闻频道
-            mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8");
+            // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8");
 
             // iptv 经典剧场
             // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001186.sdp?vcdnid=001");
@@ -144,9 +157,11 @@ public class MainActivity extends Activity implements
 
             // 苹果测试
             // mPlayer.setDataSource("http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8");
+
+            mPlayer.setDataSource(mCurrentUrl);
             mPlayer.setDisplay(mVideoDisplay.getHolder());
             mPlayer.prepare();
-            mPlayer.start();
+            //mPlayer.start();
 
         } catch (Exception e) {
             Log.e(TAG, "prepare failed", e);
@@ -228,8 +243,8 @@ public class MainActivity extends Activity implements
         View contentView = LayoutInflater.from(this).inflate(R.layout.pop_menu, null);
 
         View superView = getWindow().getDecorView();
-        int with = (int) (superView.getWidth() * 0.85);
-        int height = (int) (superView.getHeight() * 0.85);
+        int with = (int) (superView.getWidth() * 0.7);
+        int height = (int) (superView.getHeight() * 0.7);
 
         final PopupWindow popupWindow = new PopupWindow(contentView, with, height, true);
         popupWindow.setTouchable(true);
@@ -303,9 +318,35 @@ public class MainActivity extends Activity implements
 
     private class ItemClickListener implements AdapterView.OnItemClickListener {
 
+        private final int mNumber;
+
+        ItemClickListener() {
+            mNumber = UrlManager.get().getUrls().size();
+        }
+
+
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Log.v(TAG, "url item position: " + position);
+            if (position < 0 || position >= mNumber) {
+                Log.v(TAG, "Bad position index.");
+                return;
+            }
 
+            UrlInfo info = UrlManager.get().getUrls().get(position);
+            if (null == info) {
+                Log.v(TAG, "null Url info");
+                return;
+            }
+
+            mCurrentUrl = info.getAddress();
+            if (!TextUtils.isEmpty(mCurrentUrl)) {
+                stopMediaPlayer();
+
+                // setupMediaPlayer();
+
+                startMediaPlayer();
+            }
         }
     }
 }
