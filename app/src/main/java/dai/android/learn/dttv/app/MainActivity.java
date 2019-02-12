@@ -116,7 +116,7 @@ public class MainActivity extends Activity implements
             // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001022.sdp?vcdnid=001");
 
             // cctv 9
-            mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001020.sdp?vcdnid=001");
+            // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001020.sdp?vcdnid=001");
             // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226566/index.m3u8");
 
             // 经典电影
@@ -129,7 +129,7 @@ public class MainActivity extends Activity implements
             // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226507/index.m3u8");
 
             // iptv 经典剧场
-            // mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001186.sdp?vcdnid=001");
+            mPlayer.setDataSource("rtsp://119.39.49.116:554/ch00000090990000001186.sdp?vcdnid=001");
 
             // 一个轮播
             // mPlayer.setDataSource("http://112.50.243.7/PLTV/88888888/224/3221226670/index.m3u8");
