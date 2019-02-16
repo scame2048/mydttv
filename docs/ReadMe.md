@@ -1,4 +1,8 @@
 
+# go to read anthor address
+https://git.coding.net/gooogle/IptvPlayer.git
+
+
 # json 定义说明
 
 ## definition
