@@ -158,6 +158,10 @@ public class MainActivity extends Activity implements
             // 苹果测试
             // mPlayer.setDataSource("http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8");
 
+
+            mCurrentUrl = "rtsp://113.136.42.45:554/PLTV/88888888/224/3221226087/10000100000000060000000001759104_0.smil";
+
+
             mPlayer.setDataSource(mCurrentUrl);
             mPlayer.setDisplay(mVideoDisplay.getHolder());
             mPlayer.prepare();
